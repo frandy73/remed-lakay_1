@@ -1,0 +1,8 @@
+{
+  "name": "Remèd Lakay",
+  "description": "Yon platfòm dijital pou medsin tradisyonèl ayisyen ak plant medsin. Jwenn remèd natirèl epi pale ak Doktè Fèy AI.",
+  "requestFramePermissions": [
+    "microphone",
+    "geolocation"
+  ]
+}
