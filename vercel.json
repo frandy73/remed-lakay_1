@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/chatpdf/:path*",
+      "destination": "https://api.chatpdf.com/:path*"
+    }
+  ]
+}

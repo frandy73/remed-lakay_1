@@ -34,18 +34,24 @@ export const sendMessageToChatPDF = async (messages: ChatPDFMessage[]) => {
     }),
   });
 
+  const responseText = await response.text();
+
   if (!response.ok) {
     let errorMessage = "Erè nan ChatPDF API";
     try {
-      const errorData = await response.json();
+      const errorData = JSON.parse(responseText);
       errorMessage = errorData.message || errorData.error || errorMessage;
     } catch {
-      const errorText = await response.text();
-      errorMessage = errorText || `API error with status ${response.status}`;
+      errorMessage = responseText || `API error with status ${response.status}`;
     }
     throw new Error(errorMessage);
   }
 
-  const data = await response.json();
-  return data.content;
+  try {
+    const data = JSON.parse(responseText);
+    return data.content;
+  } catch (e) {
+    console.error("Failed to parse ChatPDF response:", responseText);
+    throw new Error("Repons AI a pa t ka li byen.");
+  }
 };
