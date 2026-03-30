@@ -24,7 +24,7 @@ export const Activation: FC<ActivationProps> = ({ onActivate }) => {
   };
 
   const contactOwner = () => {
-    const phoneNumber = "+509"; // Add your phone number here
+    const phoneNumber = "+50936620118"; // Added your phone number here
     const message = "Bonjou, mwen ta renmen achte yon kòd aktivasyon pou Remèd Lakay.";
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
